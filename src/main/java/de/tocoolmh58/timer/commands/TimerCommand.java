@@ -130,7 +130,7 @@ public class TimerCommand implements CommandExecutor {
 
     public static void sendUsage(CommandSender sender) {
         sender.sendMessage(
-                ChatColor.BLUE +
+                ChatColor.LIGHT_PURPLE +
                         "Verwendung: " +
                         "/timer resume, " +
                         "/timer pause, " +
