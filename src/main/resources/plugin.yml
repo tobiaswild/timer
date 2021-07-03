@@ -1,0 +1,10 @@
+name: Timer
+author: Tocoolmh58
+version: ${project.version}
+main: de.tocoolmh58.timer.Main
+api-version: 1.16
+authors: [ Tocoolmh58 ]
+description: Ein einfaches Timer Plugin
+commands:
+  timer:
+    description: Steuert den Timer
