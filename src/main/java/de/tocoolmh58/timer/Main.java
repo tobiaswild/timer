@@ -3,9 +3,15 @@ package de.tocoolmh58.timer;
 import de.tocoolmh58.timer.commands.TimerCommand;
 import de.tocoolmh58.timer.timer.Timer;
 import de.tocoolmh58.timer.utils.Config;
-import org.bukkit.ChatColor;
-import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.java.JavaPlugin;
+
+/*
+ * Original Source Code by @DerBanko on YouTube
+ * https://www.youtube.com/watch?v=KxjsEzA_fU0
+ *
+ * Time conversion by @Haphazard on Stack Overflow
+ * https://stackoverflow.com/questions/6118922/convert-seconds-value-to-hours-minutes-seconds
+ */
 
 public final class Main extends JavaPlugin {
     private static Main instance;

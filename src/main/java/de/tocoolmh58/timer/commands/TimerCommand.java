@@ -114,7 +114,7 @@ public class TimerCommand implements CommandExecutor {
                 Timer timer = Main.getInstance().getTimer();
                 if (!timer.isHidden()) {
                     timer.setHidden(true);
-                    sender.sendMessage(ChatColor.GREEN + "Der Timer wurde ausgeblendet");
+                    sender.sendMessage(ChatColor.GREEN + "Der Timer wird ausgeblendet");
                     return true;
                 } else {
                     sender.sendMessage(ChatColor.RED + "Der Timer ist bereits ausgeblendet");
