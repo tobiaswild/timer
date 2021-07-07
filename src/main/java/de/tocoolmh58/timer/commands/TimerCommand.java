@@ -6,8 +6,12 @@ import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.command.TabCompleter;
 
-public class TimerCommand implements CommandExecutor {
+import java.util.ArrayList;
+import java.util.List;
+
+public class TimerCommand implements CommandExecutor, TabCompleter {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String s, String[] args) {
         if (!sender.hasPermission("timer.command")) {
@@ -75,6 +79,7 @@ public class TimerCommand implements CommandExecutor {
                     }
                     break;
                 }
+                notPossible(sender);
                 return false;
             }
             case "reset":{
@@ -89,6 +94,7 @@ public class TimerCommand implements CommandExecutor {
                     sender.sendMessage(ChatColor.GREEN + "Der Timer wurde zurückgesetzt");
                     return true;
                 }
+                notPossible(sender);
                 return false;
             }
             case "show": {
@@ -128,6 +134,43 @@ public class TimerCommand implements CommandExecutor {
         return false;
     }
 
+    @Override
+    public List<String> onTabComplete(CommandSender sender, Command command, String s, String[] args) {
+        ArrayList<String> list = new ArrayList<>();
+        Timer timer = Main.getInstance().getTimer();
+        if (args.length == 0) {
+            return list;
+        }
+        if (args.length == 1) {
+            if (timer.isHidden()) {
+                list.add("show");
+            } else {
+                list.add("hide");
+                if (timer.isRunning()) {
+                    list.add("pause");
+                    list.remove("hide");
+                } else {
+                    list.add("resume");
+                    list.add("set");
+                    list.add("reset");
+                }
+            }
+        }
+        if (args.length == 2 && args[0].equalsIgnoreCase("set")) {
+            for (int i = 0; i < 10; i++) {
+                list.add(String.valueOf(i));
+            }
+        }
+        ArrayList<String> comList = new ArrayList<>();
+        String current = args[args.length-1].toLowerCase();
+        for (String s1 : list) {
+            if (s1.contains(current)) {
+                comList.add(s1);
+            }
+        }
+        return comList;
+    }
+
     public static void sendUsage(CommandSender sender) {
         sender.sendMessage(
                 ChatColor.LIGHT_PURPLE +
@@ -144,6 +187,6 @@ public class TimerCommand implements CommandExecutor {
         sender.sendMessage(ChatColor.RED + "Dazu hast du keine Rechte");
     }
     public static void notPossible(CommandSender sender) {
-        sender.sendMessage(ChatColor.RED + "Das geht leider nicht");
+        sender.sendMessage(ChatColor.RED + "Das geht leider nicht, weil der Timer nicht angezeigt wird");
     }
 }
