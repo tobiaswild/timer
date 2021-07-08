@@ -1,4 +1,4 @@
-package de.tocoolmh58.timer.utils;
+package de.tocoolmh58.timer.util;
 
 import org.bukkit.configuration.file.YamlConfiguration;
 

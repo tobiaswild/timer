@@ -1,4 +1,4 @@
-package de.tocoolmh58.timer.commands;
+package de.tocoolmh58.timer.command;
 
 import de.tocoolmh58.timer.Main;
 import de.tocoolmh58.timer.timer.Timer;

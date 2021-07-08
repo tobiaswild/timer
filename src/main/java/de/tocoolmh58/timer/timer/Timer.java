@@ -1,7 +1,7 @@
 package de.tocoolmh58.timer.timer;
 
 import de.tocoolmh58.timer.Main;
-import de.tocoolmh58.timer.utils.Config;
+import de.tocoolmh58.timer.util.Config;
 import net.md_5.bungee.api.ChatMessageType;
 import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.Bukkit;

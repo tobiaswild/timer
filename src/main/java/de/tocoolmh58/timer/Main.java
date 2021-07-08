@@ -1,13 +1,14 @@
 package de.tocoolmh58.timer;
 
-import de.tocoolmh58.timer.commands.TimerCommand;
+import de.tocoolmh58.timer.command.TimerCommand;
 import de.tocoolmh58.timer.timer.Timer;
-import de.tocoolmh58.timer.utils.Config;
+import de.tocoolmh58.timer.util.Config;
 import org.bukkit.plugin.java.JavaPlugin;
 
 /*
- * Original Source Code by @DerBanko on YouTube
+ * Original Source Code by DerBanko on YouTube and GitHub
  * https://www.youtube.com/watch?v=KxjsEzA_fU0
+ * https://github.com/DerBanko/TutorialReloaded
  *
  * Time conversion by @Haphazard on Stack Overflow
  * https://stackoverflow.com/questions/6118922/convert-seconds-value-to-hours-minutes-seconds
