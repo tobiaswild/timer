@@ -1,7 +1,7 @@
-package de.tocoolmh58.timer.timer;
+package de.tobiaswild.timer.timer;
 
-import de.tocoolmh58.timer.Main;
-import de.tocoolmh58.timer.util.Config;
+import de.tobiaswild.timer.Main;
+import de.tobiaswild.timer.util.Config;
 import net.md_5.bungee.api.ChatMessageType;
 import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.Bukkit;
@@ -37,7 +37,7 @@ public class Timer {
     public void sendActionbar() {
         for (Player player: Bukkit.getOnlinePlayers()) {
             if (!isRunning()) {
-                player.spigot().sendMessage(ChatMessageType.ACTION_BAR, new TextComponent(ChatColor.RED + "Timer ist pausiert"));
+                player.spigot().sendMessage(ChatMessageType.ACTION_BAR, new TextComponent(ChatColor.RED + "timer is paused"));
                 continue;
             }
             player.spigot().sendMessage(ChatMessageType.ACTION_BAR, new TextComponent(ChatColor.GOLD.toString() + getHours() + ":" + getMinutes() + ":" + getSeconds()));

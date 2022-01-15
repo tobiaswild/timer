@@ -1,4 +1,4 @@
-package de.tocoolmh58.timer.util;
+package de.tobiaswild.timer.util;
 
 import org.bukkit.configuration.file.YamlConfiguration;
 

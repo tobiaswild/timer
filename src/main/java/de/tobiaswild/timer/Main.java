@@ -1,8 +1,9 @@
-package de.tocoolmh58.timer;
+package de.tobiaswild.timer;
 
-import de.tocoolmh58.timer.command.TimerCommand;
-import de.tocoolmh58.timer.timer.Timer;
-import de.tocoolmh58.timer.util.Config;
+import de.tobiaswild.timer.command.TimerCommand;
+import de.tobiaswild.timer.timer.Timer;
+import de.tobiaswild.timer.util.Config;
+import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
 
 /*
@@ -27,7 +28,7 @@ public final class Main extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        getCommand();
+        this.getCommand("timer").setExecutor(new TimerCommand());
         timer = new Timer();
     }
 
@@ -37,8 +38,8 @@ public final class Main extends JavaPlugin {
         config.save();
     }
 
-    public void getCommand() {
-        this.getCommand("timer").setExecutor(new TimerCommand());
+    public static String getPrefix() {
+        return ChatColor.GRAY + "[" + ChatColor.BLUE + "timer" + ChatColor.GRAY + "]";
     }
 
     public static Main getInstance() {

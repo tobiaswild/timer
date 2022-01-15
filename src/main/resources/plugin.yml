@@ -1,9 +1,9 @@
-name: Timer
+name: ${project.name}
 author: Tocoolmh58
 version: ${project.version}
-main: de.tocoolmh58.timer.Main
-api-version: 1.17
-description: Ein einfaches Timer Plugin
+main: de.tobiaswild.timer.Main
+api-version: 1.18
+description: ${project.description}
 commands:
   timer:
-    description: Steuert den Timer
+    description: controll the timer
